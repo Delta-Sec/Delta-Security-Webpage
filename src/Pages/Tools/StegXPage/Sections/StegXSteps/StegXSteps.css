@@ -1,0 +1,191 @@
+.process-wrapper {
+  padding: 50px 5%;
+  background: rgba(0, 0, 0, 0.8); 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.5px solid rgba(255, 217, 0, 0.35);
+  border-radius: 3px;
+  margin-top: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.process-header {
+  text-align: center;
+}
+
+.process-header .subtitle {
+  color: var(--steg-x-color);
+  font-family: 'Rajdhani';
+  letter-spacing: 5px;
+  font-size: 14px;
+}
+
+.process-header .title {
+  color: white;
+  font-family: 'Rajdhani';
+  font-size: 45px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.process-header .title span {
+  color: var(--steg-x-color);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 25px;
+  max-width: 1300px;
+  width: 100%;
+}
+
+#decode-steps-grid{
+    grid-template-columns: repeat(3, 1fr); 
+}
+
+.step-card {
+  position: relative;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 30px;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative; 
+  overflow: hidden;   
+  z-index: 1; 
+}
+
+.step-icon-watermark {
+  position: absolute; 
+  bottom: -30px;      
+  right: -30px;       
+  z-index: -1;       
+  pointer-events: none; 
+  display: flex; 
+}
+
+.step-icon-watermark svg {
+  font-size: 180px !important; 
+  color: var(--steg-x-color); 
+  opacity: 0.07; 
+  transform: rotate(-30deg);
+  transition: all 0.4s ease-in-out;
+}
+
+.step-card:hover .step-icon-watermark svg {
+  opacity: 0.15; 
+  transform: rotate(-20deg) scale(1.1); 
+}
+
+.step-id {
+  font-family: 'Rajdhani';
+  font-size: 50px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  line-height: 1;
+  margin-bottom: 20px;
+  transition: 0.4s;
+}
+
+.step-title{
+  color: white;
+  font-family: 'Rajdhani';
+  font-size: 24px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.step-desc{
+  color: #999;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.step-card:hover {
+  border-color: var(--steg-x-color);
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.step-card:hover .step-id {
+  color: var(--steg-x-color);
+  -webkit-text-stroke: 1px var(--steg-x-color);
+}
+
+#see-docs-button{
+  font-size: 18px;
+  padding: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  border: 1px solid var(--steg-x-color);
+  border-radius: 2.5px;
+  background-color: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(10px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease-in-out;
+  width: fit-content; 
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+#see-docs-button:hover{
+  background-color: rgba(255, 217, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(255, 217, 0, 0.75);
+}
+
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+
+  #decode-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #decode-steps-grid {
+    grid-template-columns: 1fr; 
+  }
+  
+  .process-header .title {
+    font-size: 32px;
+  }
+  
+  .step-card {
+    padding: 30px;
+    text-align: center; 
+    gap: 20px;
+    align-items: center;
+}
+
+.step-id {
+  text-align: left;
+  margin: 0;
+}
+
+.step-title{
+  text-align: left;
+  margin: 0;
+}
+
+.step-number{
+    display: flex;
+    flex-direction:column
+}
+
+
+}

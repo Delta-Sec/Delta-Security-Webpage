@@ -1,0 +1,194 @@
+ .upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.zshark-glitch-title {
+  position: relative;
+  font-family: "Orbitron", sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  /* توهج أزرق خفيف */
+  text-shadow: 0 0 10px rgba(27, 231, 255, 0.3);
+}
+
+/* تأثير الارتجاج (Glitch) */
+.zshark-glitch-title::before,
+.zshark-glitch-title::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.zshark-glitch-title::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff4d4d; /* لون أحمر تحذيري */
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.zshark-glitch-title::after {
+  left: -2px;
+  text-shadow: -2px 0 #1be7ff; /* لون الشارك الأزرق */
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(31px, 9999px, 94px, 0);
+  }
+  20% {
+    clip: rect(62px, 9999px, 42px, 0);
+  }
+  40% {
+    clip: rect(16px, 9999px, 78px, 0);
+  }
+  60% {
+    clip: rect(87px, 9999px, 12px, 0);
+  }
+  80% {
+    clip: rect(53px, 9999px, 65px, 0);
+  }
+  100% {
+    clip: rect(24px, 9999px, 89px, 0);
+  }
+}
+
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(65px, 9999px, 21px, 0);
+  }
+  20% {
+    clip: rect(12px, 9999px, 56px, 0);
+  }
+  40% {
+    clip: rect(98px, 9999px, 14px, 0);
+  }
+  60% {
+    clip: rect(43px, 9999px, 76px, 0);
+  }
+  80% {
+    clip: rect(21px, 9999px, 44px, 0);
+  }
+  100% {
+    clip: rect(78px, 9999px, 92px, 0);
+  }
+}
+
+.dropzone {
+  width: 100%;
+  height: 300px;
+  background: #0d1117;
+  border: 1px dashed rgba(27, 231, 255, 0.3);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dropzone.active {
+  border-color: #1be7ff;
+  background: rgba(27, 231, 255, 0.05);
+}
+
+.zshark-upload-icon {
+  margin-bottom: 20px;
+}
+
+.loader-box {
+  color: #1be7ff;
+}
+
+.progress-bar-loading {
+  width: 200px;
+  height: 4px;
+  background: rgba(27, 231, 255, 0.1);
+  overflow: hidden;
+  position: relative;
+  margin-top: 15px;
+}
+
+.progress-bar-loading::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: #1be7ff;
+  animation: loading 1.5s infinite ease-in-out;
+}
+
+@keyframes loading {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.reset-btn {
+  background: none;
+  border: 1px solid #1be7ff;
+  color: #1be7ff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* أضف هذا للجزء الخاص بالأزرار */
+.zshark-start-btn {
+  background: #1be7ff;
+  color: #0d1117;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(27, 231, 255, 0.3);
+}
+
+.zshark-start-btn:hover {
+  background: #15b8cc;
+  transform: translateY(-2px);
+}
+
+.file-ready {
+  color: #1be7ff;
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.zshark-error-alert {
+  background-color: rgba(211, 47, 47, 0.1) !important;
+  color: #ff5252 !important;
+  border: 1px solid #d32f2f;
+  margin: 20px 0;
+  font-family: "Rajdhani", sans-serif !important;
+  border-radius: 8px !important;
+  width: 100%;
+}
+
+.zshark-error-alert svg {
+  color: #ff5252;
+}

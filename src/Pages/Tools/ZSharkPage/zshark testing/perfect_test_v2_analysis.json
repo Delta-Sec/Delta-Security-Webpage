@@ -1,0 +1,199 @@
+{
+    "pcap_path": "perfect_test_v2.pcap",
+    "start_time": "2026-01-01T18:10:57.883240",
+    "end_time": "2026-01-01T18:12:24.391898",
+    "total_packets": 1480,
+    "total_bytes": 80258,
+    "detections": [
+        {
+            "engine_name": "DDoSDetector",
+            "timestamp": "2026-01-01T18:11:22.883095",
+            "severity": 1.0,
+            "score": 291.73688051382544,
+            "label": "High Volume Anomaly (DDoS Suspect)",
+            "justification": "PPS Z-score 291.74 exceeds threshold. Spike: 117.1 PPS (Avg: 18.7)",
+            "evidence": {
+                "current_pps": 117.10613687727108,
+                "mean_pps": 18.693718158816246,
+                "z_score": 291.73688051382544
+            },
+            "flow_key": null
+        },
+        {
+            "engine_name": "PortScanDetector",
+            "timestamp": "2026-01-01T18:11:22.883095",
+            "severity": 1.0,
+            "score": 149.0,
+            "label": "Port Scan Suspect (Stateful)",
+            "justification": "Source IP 192.168.1.70 accessed 149 unique ports over time.",
+            "evidence": {
+                "source_ip": "192.168.1.70",
+                "unique_ports": 149
+            },
+            "flow_key": null
+        },
+        {
+            "engine_name": "ARPSpoofDetector",
+            "timestamp": "2026-01-01T18:11:22.883095",
+            "severity": 1.0,
+            "score": 1.0,
+            "label": "ARP Spoofing Detected (MAC Conflict)",
+            "justification": "IP 192.168.1.1 changed MAC from 00:11:22:33:44:55 to ff:ee:dd:cc:bb:aa.",
+            "evidence": {
+                "ip": "192.168.1.1",
+                "old_mac": "00:11:22:33:44:55",
+                "new_mac": "ff:ee:dd:cc:bb:aa"
+            },
+            "flow_key": null
+        },
+        {
+            "engine_name": "DNSAnomalyDetector",
+            "timestamp": "2026-01-01T18:11:22.883095",
+            "severity": 0.987744375108174,
+            "score": 4.93872187554087,
+            "label": "DNS High Entropy (DGA Suspect)",
+            "justification": "Domain 'zq8v2p9w4b1n6m3x5r7t9y2u4i6o8p0a1s2d3f4g5h6j7k8l.com' (Label: zq8v2p9w4b1n6m3x5r7t9y2u4i6o8p0a1s2d3f4g5h6j7k8l) has high entropy (4.94).",
+            "evidence": {
+                "domain": "zq8v2p9w4b1n6m3x5r7t9y2u4i6o8p0a1s2d3f4g5h6j7k8l.com",
+                "entropy": 4.93872187554087
+            },
+            "flow_key": null
+        }
+    ],
+    "summary_stats": {
+        "total_packets": 1480,
+        "total_bytes": 80258
+    },
+    "analysis_stats": {},
+    "window_stats": [
+        {
+            "start_time": "2026-01-01T18:10:57.883240",
+            "end_time": "2026-01-01T18:11:07.883240",
+            "packet_count": 200,
+            "total_bytes": 11200,
+            "pps": 20.20231630175285,
+            "bps": 9050.637703185277,
+            "src_ip_entropy": 0.0,
+            "dst_ip_entropy": 0.0
+        },
+        {
+            "start_time": "2026-01-01T18:11:12.883095",
+            "end_time": "2026-01-01T18:11:22.883095",
+            "packet_count": 1171,
+            "total_bytes": 63172,
+            "pps": 117.10613687727108,
+            "bps": 50540.24853158647,
+            "src_ip_entropy": 0.6380909803660321,
+            "dst_ip_entropy": 0.08728909599959367
+        },
+        {
+            "start_time": "2026-01-01T18:11:23.391331",
+            "end_time": "2026-01-01T18:11:33.391331",
+            "packet_count": 20,
+            "total_bytes": 1080,
+            "pps": 2.1069096252017157,
+            "bps": 910.1849580871411,
+            "src_ip_entropy": 0.0,
+            "dst_ip_entropy": 0.0
+        },
+        {
+            "start_time": "2026-01-01T18:11:33.391683",
+            "end_time": "2026-01-01T18:11:43.391683",
+            "packet_count": 21,
+            "total_bytes": 1134,
+            "pps": 2.102939489755759,
+            "bps": 908.4698595744879,
+            "src_ip_entropy": 0.0,
+            "dst_ip_entropy": 0.0
+        },
+        {
+            "start_time": "2026-01-01T18:11:43.876391",
+            "end_time": "2026-01-01T18:11:53.876391",
+            "packet_count": 20,
+            "total_bytes": 1080,
+            "pps": 2.105457292107311,
+            "bps": 909.5575501903584,
+            "src_ip_entropy": 0.0,
+            "dst_ip_entropy": 0.0
+        },
+        {
+            "start_time": "2026-01-01T18:11:53.890460",
+            "end_time": "2026-01-01T18:12:03.890460",
+            "packet_count": 21,
+            "total_bytes": 1134,
+            "pps": 2.1005494887588183,
+            "bps": 907.4373791438095,
+            "src_ip_entropy": 0.0,
+            "dst_ip_entropy": 0.0
+        },
+        {
+            "start_time": "2026-01-01T18:12:04.384118",
+            "end_time": "2026-01-01T18:12:14.384118",
+            "packet_count": 20,
+            "total_bytes": 1080,
+            "pps": 2.1059071510374014,
+            "bps": 909.7518892481576,
+            "src_ip_entropy": 0.0,
+            "dst_ip_entropy": 0.0
+        },
+        {
+            "start_time": "2026-01-01T18:12:14.391898",
+            "end_time": "2026-01-01T18:12:24.391898",
+            "packet_count": 7,
+            "total_bytes": 378,
+            "pps": 2.346571798230232,
+            "bps": 1013.7190168354604,
+            "src_ip_entropy": 0.0,
+            "dst_ip_entropy": 0.0
+        }
+    ],
+    "top_source_ips": [
+        {
+            "ip": "10.0.0.5",
+            "packets": 1000,
+            "bytes": 54000
+        },
+        {
+            "ip": "192.168.1.70",
+            "packets": 149,
+            "bytes": 8046
+        },
+        {
+            "ip": "10.0.0.7",
+            "packets": 120,
+            "bytes": 6480
+        },
+        {
+            "ip": "192.168.1.100",
+            "packets": 101,
+            "bytes": 7112
+        }
+    ],
+    "top_dest_ports": [
+        {
+            "port": 80,
+            "packets": 1001,
+            "bytes": 54054
+        },
+        {
+            "port": 443,
+            "packets": 120,
+            "bytes": 6480
+        },
+        {
+            "port": 53,
+            "packets": 102,
+            "bytes": 7166
+        },
+        {
+            "port": 1,
+            "packets": 1,
+            "bytes": 54
+        },
+        {
+            "port": 2,
+            "packets": 1,
+            "bytes": 54
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+.docs-container {
+  background-color: rgba(13, 13, 13, 0.6);
+  width: 350px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.docs-header {
+  font-family: "Orbitron", sans-serif;
+  color: var(--spy-eye-color);
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  text-transform: uppercase;
+}
+
+.docs-sub-cards {
+  background-color: var(--card-bg);
+  width: 100%;
+  height: 65px; 
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box; 
+}
+
+.spyeye-item:hover {
+  background-color: rgba(255, 0, 60, 0.05);
+  border: 1px solid var(--spy-eye-color);
+  transform: scale(1.02);
+}
+
+.docs-icon {
+  color: var(--spy-eye-color);
+  font-size: 35px !important;
+}
+
+.docs-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.docs-title {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.8;
+  margin: 0;
+  font-size: 18px;
+}
+
+.docs-desc {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  opacity: 0.6;
+  margin: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .docs-container {
+    width: 100vw;
+    margin: 10px 0;
+    border: 1px;
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: blur(10px);
+    background-color: rgba(13, 13, 13, 0.1);
+  }
+
+  .docs-sub-cards {
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #222;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}

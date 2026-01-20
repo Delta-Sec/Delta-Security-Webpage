@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+.footer {
+  background-color: var(--bg-dark);
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.project-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  opacity: 0.8;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ToolsIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* التنسيق الخاص لكل أيقونة وتوهجها */
+.icon-wrapper {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.icon-wrapper:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* تطبيق الألوان في الـ Hover بناءً على اختياراتك */
+.spyeye:hover { filter: drop-shadow(0 0 10px var(--spy-eye-color)); }
+.stegx:hover { filter: drop-shadow(0 0 10px var(--steg-x-color)); }
+.falcon:hover { filter: drop-shadow(0 0 10px var(--falcon-defender-color)); }
+.zshark:hover { filter: drop-shadow(0 0 10px var(--z-shark-color)); }
+
+/* الروابط */
+.footer-nav {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-nav span {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+
+.footer-nav span:hover {
+  opacity: 1;
+  color: var(--delta-sec-color);
+  text-shadow: 0 0 5px var(--delta-sec-color);
+}
+
+.contactInfo {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.contactInfo svg {
+  color: var(--text-main);
+  opacity: 0.4;
+  transition: 0.3s;
+}
+
+.contactInfo svg:hover {
+  opacity: 1;
+  color: var(--delta-sec-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-name{
+    display: flex;
+    flex-direction: column;
+  }
+  
+    .footer-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .ToolsIcons {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  
+}

@@ -1,0 +1,101 @@
+.hero-container-stegx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+  padding: 10px 20px;
+}
+
+#stegx-hero-title {
+  letter-spacing: 5px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--steg-x-color);
+  margin-bottom: 10px;
+}
+
+.stegx-hero-desc h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: white;
+  max-width: 800px;
+}
+
+#stegx-desktop-logo {
+  display: block;
+  fill: var(--steg-x-color);
+}
+
+#stegx-mobile-logo {
+  display: none;
+}
+
+.steg-x-CTA-button {
+  font-size: 18px;
+  padding: 12px;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  border: 1px solid var(--steg-x-color);
+  border-radius: 2.5px;
+  background-color: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(10px);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease-in-out;
+  width: fit-content; 
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.steg-x-CTA-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+#generate-image:hover {
+  background-color: rgba(255, 217, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(255, 217, 0, 0.75);
+}
+
+#view-docs:hover {
+  background-color: rgba(255, 217, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(255, 217, 0, 0.75);
+}
+
+@media (max-width: 765px) {
+  #stegx-desktop-logo {
+    display: none;
+  }
+
+  #stegx-mobile-logo {
+    display: block;
+    position: relative;
+    width: 250px;
+    fill: var(--steg-x-color);
+  }
+
+  .stegx-hero-desc h1 {
+    font-size: 1.2rem;
+  }
+
+  .steg-x-CTA-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .steg-x-CTA-button {
+    font-size: 18px;
+  }
+
+  #generate-image svg {
+    width: 20px;
+  }
+}

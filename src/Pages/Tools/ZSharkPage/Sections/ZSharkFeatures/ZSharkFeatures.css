@@ -1,0 +1,107 @@
+.zshark-features-container {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-family: rajdhani;
+}
+
+.features-text-section {
+  text-align: center;
+  max-width: 900px;
+  margin-bottom: 60px;
+}
+
+.main-headline {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.neon-text {
+  color: #1be7ff;
+  text-shadow: 0 0 20px rgba(27, 231, 255, 0.3);
+}
+
+.sub-headline {
+  font-size: 1.25rem;
+  color: #8b949e;
+  line-height: 1.6;
+}
+
+/* شبكة الكروت */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.zshark-feature-card {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.zshark-feature-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(27, 231, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* الأيقونة */
+.card-icon-wrapper {
+  background: rgba(27, 231, 255, 0.05);
+  color: #1be7ff;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.card-icon-wrapper svg {
+  font-size: 24px;
+}
+
+.zshark-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.zshark-card-desc {
+  font-size: 0.95rem;
+  color: #8b949e;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1; /* لضمان محاذاة الفوتر في الأسفل */
+}
+
+/* الفوتر النيون */
+.zshark-card-footer {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #1be7ff;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 15px;
+}
+
+/* استجابة للهواتف */
+@media (max-width: 768px) {
+  .main-headline { font-size: 2.5rem; }
+  .feature-card { text-align: left; }
+}

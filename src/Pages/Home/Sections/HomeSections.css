@@ -1,0 +1,117 @@
+.home-hero {
+  padding: 120px 0 80px;
+  background: radial-gradient(circle at center, rgba(0, 163, 151, 0.05) 0%, transparent 70%);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.glitch-text {
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 5rem !important;
+  font-weight: 900 !important;
+  color: #fff;
+  letter-spacing: 10px;
+  position: relative;
+  margin-bottom: 20px !important;
+}
+
+.hero-subtitle {
+  font-family: 'Rajdhani', sans-serif !important;
+  color: var(--delta-sec-color);
+  font-weight: 600 !important;
+  letter-spacing: 2px;
+  margin-bottom: 20px !important;
+}
+
+.hero-description {
+  max-width: 700px;
+  color: #888;
+  font-size: 1.2rem !important;
+  margin-bottom: 40px !important;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-btn {
+  background: var(--delta-sec-color) !important;
+  color: #000 !important;
+  font-weight: bold !important;
+  padding: 12px 30px !important;
+  border-radius: 4px !important;
+  font-family: 'Rajdhani', sans-serif !important;
+}
+
+.secondary-btn {
+  border: 1px solid var(--delta-sec-color) !important;
+  color: var(--delta-sec-color) !important;
+  padding: 12px 30px !important;
+  border-radius: 4px !important;
+  font-family: 'Rajdhani', sans-serif !important;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif !important;
+  text-align: center;
+  margin-bottom: 60px !important;
+  font-size: 2.5rem !important;
+  color: #fff;
+}
+
+.feature-card-home {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 40px 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.feature-card-home:hover {
+  border-color: var(--card-color);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px -10px var(--card-color);
+}
+
+.feature-icon-home {
+  color: var(--card-color);
+  margin-bottom: 10px;
+}
+
+.feature-card-home h5 {
+  font-family: 'Orbitron', sans-serif !important;
+  font-size: 1.2rem !important;
+  color: #fff;
+}
+
+.feature-card-home p {
+  color: #888;
+  font-family: 'Rajdhani', sans-serif !important;
+}
+
+@media (max-width: 768px) {
+  .glitch-text {
+    font-size: 3rem !important;
+    letter-spacing: 5px;
+  }
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .primary-btn, .secondary-btn {
+    width: 100%;
+  }
+}

@@ -1,38 +1,26 @@
-.App {
+:root {
+  --delta-sec-color: #00A397;
+  --spy-eye-color: #FF003C;
+  --steg-x-color: #ffd700;
+  --falcon-defender-color: #15B24B;
+  --z-shark-color: #1BE7FF;
+  --bg-dark: #070707;
+  --text-main: #fff;
+  --border-color: #393939;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: "rajdhani", sans-serif;
+  color: var(--text-main);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+    text-decoration: none; /* لإزالة الخط السفلي */
+    color: inherit;       /* لجعل الرابط يأخذ لون النص المحيط به (الأب) */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+*, *::before, *::after {
+    box-sizing: border-box;
 }

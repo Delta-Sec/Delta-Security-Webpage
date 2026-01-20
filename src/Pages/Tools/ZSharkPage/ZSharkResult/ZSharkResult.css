@@ -1,0 +1,321 @@
+/* --- 1. الإعدادات العامة --- */
+.zshark-dashboard-container {
+  padding: 20px;
+  min-height: 100vh;
+  color: white;
+}
+
+/* --- 2. الهيدر المتجاوب --- */
+.zshark-result-header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+}
+
+.pcap-main-info h2 {
+  color: #1be7ff;
+}
+.pcap-main-info h1 {
+  margin: 0;
+}
+.pcap-main-info {
+  text-align: left;
+}
+
+.pcap-stats-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.pcap-stats-group h1,
+.pcap-stats-group h2,
+.pcap-stats-group h3,
+.pcap-stats-group h4,
+.pcap-stats-group h5,
+.pcap-stats-group h6 {
+  margin: 0;
+}
+
+/* --- 3. البوكسات (Stat Boxes) --- */
+.stat-box {
+  min-width: 75px;
+  background: rgba(27, 231, 255, 0.04);
+  border: 1px solid rgba(27, 231, 255, 0.15);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+/* دمج الخصائص المتكررة لـ main-stat */
+.stat-box.main-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.duration-highlight {
+  color: #1be7ff;
+  margin: 0;
+}
+
+.stat-box.mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-box.mini.danger-border {
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 0.5px solid rgba(255, 0, 0, 0.5);
+}
+
+.box-value {
+  font-size: 25px;
+  color: #1be7ff;
+  font-weight: bold;
+}
+.box-label {
+  font-size: 16px;
+  color: #898989;
+  text-transform: uppercase;
+}
+
+/* --- 4. التبويبات والرسم البياني --- */
+.tabs-navigation-wrapper {
+  background: #0d1117;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.chart-wrapper,
+.chart-container {
+  width: 100%;
+  height: 350px;
+  margin-top: 20px;
+}
+
+.chart-card {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 5. قسم التهديدات (Threats) --- */
+.threats-vertical-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* دمج كلاسات كرت التهديد المتكررة */
+.threat-enhanced-card,
+.threat-card-v2 {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  transition: transform 0.2s;
+  min-width: 0; /* لضمان تفعيل الـ Wrap بالداخل */
+  margin-bottom: 20px;
+}
+
+.threat-enhanced-card:hover {
+  transform: translateX(5px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.threat-side-indicator {
+  width: 6px;
+  height: 100%;
+}
+
+/* دمج كلاسات جسم الكرت المتكررة */
+.threat-body,
+.threat-card-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.threat-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.threat-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.threat-badge {
+  font-size: 0.65rem;
+  font-weight: 900;
+  padding: 2px 8px;
+  border: 1px solid;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.threat-label-text {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin: 0;
+}
+.threat-timestamp,
+.threat-engine-info {
+  font-size: 0.8rem;
+  color: #5a636e;
+}
+.engine-name {
+  color: #1be7ff;
+  font-weight: bold;
+}
+
+/* دمج منطق الـ Wrap للنصوص المتكرر */
+.threat-justification-text,
+.threat-justification,
+.threat-justification-msg,
+.evidence-value,
+.ev-data-text,
+.ev-val-text {
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  line-height: 1.5;
+  width: 100%;
+  display: block;
+}
+
+.threat-justification-text,
+.threat-justification {
+  font-size: 0.95rem;
+  margin: 0;
+  color: #d1d5db;
+}
+
+/* دمج شبكة الأدلة المتكررة */
+.evidence-grid,
+.evidence-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.evidence-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.evidence-key {
+  font-size: 0.6rem;
+  color: #5a636e;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.evidence-value,
+.ev-data-text {
+  font-family: "JetBrains Mono", monospace;
+  color: #1be7ff;
+  font-size: 0.9rem;
+}
+
+.threat-severity-glow-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+}
+
+.no-threats-view {
+  text-align: center;
+  padding: 60px;
+  background: rgba(27, 231, 255, 0.02);
+  border-radius: 12px;
+  border: 1px dashed rgba(27, 231, 255, 0.2);
+}
+
+/* --- 6. Media Queries (Desktop & Mobile) --- */
+@media (min-width: 768px) {
+  .zshark-result-header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .pcap-stats-group {
+    flex-direction: row;
+    width: auto;
+  }
+  .stats-grid-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  .zshark-dashboard-container {
+    padding: 30px;
+  }
+  .evidence-grid,
+  .evidence-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: fit-content;
+  }
+  .chart-card {
+    min-height: 350px;
+  }
+  .chart-wrapper {
+    height: 250px;
+  }
+  .threat-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}
+
+.content-card {
+  background: #0d1117;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.data-row-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 0.9rem;
+}
+
+/* الإعداد الافتراضي (للهاتف): عمود واحد فقط */
+.stats-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+/* الإعداد للشاشات الكبيرة (Desktop): عمودين جنب بعض */
+@media (min-width: 768px) {
+  .stats-grid-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,433 @@
+/*
+  AboutUs.css - أنماط CSS عادية محولة من Tailwind CSS
+  للتوافق مع مشروع Create React App
+*/
+
+/* استيراد الخطوط */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+/* المتغيرات الأساسية (مستخلصة من index.css الأصلي) */
+:root {
+  --delta-sec-color: #00a397;
+  --primary: #00a397;
+  --primary-foreground: #000000;
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: rgba(0, 79, 69, 0.15);
+  --border: #1a3a3f;
+  --destructive: #ff006e;
+}
+
+/* الأنماط العامة */
+.about-us-page {
+  min-height: 100vh;
+  color: var(--foreground);
+  overflow: hidden;
+  background: linear-gradient(135deg, #000000 0%, #0a0e1a 100%);
+}
+
+.about-us-page * {
+  box-sizing: border-box;
+}
+
+.about-us-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.about-us-page h1,
+.about-us-page h2,
+.about-us-page h3,
+.about-us-page h4,
+.about-us-page h5,
+.about-us-page h6 {
+  font-family: "Orbitron", monospace;
+  font-weight: 700;
+}
+
+.about-us-page p,
+.about-us-page span,
+.about-us-page div {
+  font-family: "Rajdhani", sans-serif;
+}
+
+.role,
+.badge,
+.expertise-label {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+}
+
+/* الأنماط المخصصة (مستخلصة من index.css الأصلي) */
+
+/* Custom container utility */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem; /* 16px - mobile padding */
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem; /* 24px - tablet padding */
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem; /* 32px - desktop padding */
+    padding-right: 2rem;
+    max-width: 1280px; /* Standard content width */
+  }
+}
+
+/* Animations */
+@keyframes neon-glow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 10px rgba(0, 163, 151, 0.5),
+      inset 0 0 10px rgba(0, 163, 151, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(0, 163, 151, 0.8),
+      inset 0 0 20px rgba(0, 163, 151, 0.2);
+  }
+}
+
+@keyframes boot-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes system-pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(0, 163, 151, 0.5);
+    box-shadow:
+      inset 0 0 10px rgba(0, 163, 151, 0.1),
+      0 0 10px rgba(0, 163, 151, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(0, 163, 151, 0.8);
+    box-shadow:
+      inset 0 0 15px rgba(0, 163, 151, 0.2),
+      0 0 20px rgba(0, 163, 151, 0.4);
+  }
+}
+
+/* Button */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.375rem; /* rounded-md */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  height: 2.25rem; /* h-9 */
+  padding: 0.75rem 1rem; /* px-4 py-2 */
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+  background-color: rgba(0, 163, 151, 0.9); /* hover:bg-primary/90 */
+  box-shadow: 0 0 20px rgba(0, 163, 151, 0.6);
+}
+
+.btn-sm {
+  height: 2rem; /* h-8 */
+  border-radius: 0.375rem; /* rounded-md */
+  padding: 0 0.75rem; /* px-3 */
+  font-size: 0.875rem;
+}
+
+/* Hero Section */
+.about-hero-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .about-hero-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+    align-items: center;
+  }
+}
+
+.about-hero-title {
+  font-size: 2.25rem; /* text-4xl */
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .about-hero-title {
+    font-size: 3rem; /* md:text-5xl */
+  }
+}
+
+.about-hero-title-accent {
+  color: var(--delta-sec-color);
+}
+
+.hero-text {
+  color: #ccc; /* text-gray-300 */
+  font-size: 1.125rem; /* text-lg */
+  line-height: 1.6;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.hero-image {
+  width: 16rem; /* w-64 */
+  height: auto;
+  filter: drop-shadow(0 0 20px rgba(0, 163, 151, 0.3));
+}
+
+/* System Access Banner */
+.system-banner {
+  background: rgba(0, 79, 69, 0.1);
+  border: 2px solid var(--delta-sec-color);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-family: "Rajdhani", monospace;
+  letter-spacing: 3px;
+  color: var(--delta-sec-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  animation: system-pulse 2s ease-in-out infinite;
+  position: relative;
+  margin: 2rem auto;
+  max-width: fit-content;
+  border-radius: 4px;
+}
+
+/* Team Grid */
+.team-grid-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.team-grid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Terminal Card */
+.terminal-window {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0; /* Initial state for boot-up animation */
+}
+
+.terminal-window:hover {
+  border-color: var(--delta-sec-color);
+  box-shadow: 0 0 20px rgba(0, 163, 151, 0.2);
+  transform: translateY(-5px);
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-red {
+  background: #ff5f56;
+}
+.dot-yellow {
+  background: #ffbd2e;
+}
+.dot-green {
+  background: #27c93f;
+}
+
+.about-card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+/* Avatar */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-circle {
+  width: 8rem; /* w-32 */
+  height: 8rem; /* h-32 */
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--delta-sec-color);
+  box-shadow: 0 0 15px rgba(0, 163, 151, 0.3);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Member Info */
+.member-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.member-name {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700;
+  color: white;
+  font-family: "Orbitron", monospace;
+}
+
+.member-role {
+  color: var(--delta-sec-color);
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600;
+  letter-spacing: 0.1em; /* tracking-widest */
+  text-transform: uppercase;
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* Description */
+.member-description {
+  color: #ccc; /* text-gray-300 */
+  font-size: 0.875rem; /* text-sm */
+  line-height: 1.5;
+  text-align: center;
+  font-family: "Rajdhani", sans-serif;
+}
+
+/* Expertise Matrix */
+.expertise-matrix {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.expertise-label-row {
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 600;
+  color: var(--delta-sec-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.expertise-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background-color: rgba(0, 163, 151, 0.1);
+  color: var(--delta-sec-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 163, 151, 0.3);
+  transition: background-color 0.2s;
+}
+
+.skill-tag:hover {
+  background-color: rgba(0, 163, 151, 0.2);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.social-link {
+  color: #ccc;
+  transition:
+    color 0.2s,
+    transform 0.3s;
+}
+
+.social-link:hover {
+  color: var(--delta-sec-color);
+  transform: scale(1.1);
+}
+
+/* Boot Animation Stagger */
+.boot-animation {
+  animation: boot-up 0.6s ease-out forwards;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+.stagger-5 {
+  animation-delay: 0.5s;
+}

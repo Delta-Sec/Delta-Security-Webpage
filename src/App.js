@@ -1,23 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+//============= CSS IMPORTS =============//
+import "./App.css";
+
+//============ PAGES IMPORTS ============//
+import HomePage from "./Pages/Home/HomePage";
+import SpyEyePage from "./Pages/Tools/SpyEyePage/SpyEyePage";
+import StegXPage from "./Pages/Tools/StegXPage/StegXPage";
+import FalconPage from "./Pages/Tools/FalconPage/FalconPage";
+import ZSharkPage from "./Pages/Tools/ZSharkPage/ZSharkPage";
+import AboutUs from "./Pages/AboutUs/AboutUs";
+import FAQPage from "./Pages/FAQs/FAQPage";
+//============ REACT IMPORTS ============//
+import { Route, BrowserRouter, Link, Routes } from "react-router-dom";
+import ContactUsPage from "./Pages/ContactUs/ContactUsPage";
+import Chatbot from "./SharedComponents/ChatBot";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/spyeye" element={<SpyEyePage />} />
+          <Route path="/stegx" element={<StegXPage />} />
+          <Route path="/zshark" element={<ZSharkPage />} />
+          <Route path="/falcondefender" element={<FalconPage />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/faq" element={<FAQPage />} />
+          <Route path="/contact" element={<ContactUsPage />} />
+          <Route
+            path="*"
+            element={
+              <div style={{ color: "white", textAlign: "center", mt: 10 }}>
+                <p>Page Not Found</p>
+                <p>
+                  return to <Link to={"/"}>HomePage</Link>
+                </p>
+              </div>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+      <Chatbot />
     </div>
   );
 }

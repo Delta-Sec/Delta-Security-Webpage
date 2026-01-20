@@ -1,0 +1,259 @@
+/* 1. التكوين الأساسي والمتغيرات */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --delta-sec-color: #00a397;
+  --spy-eye-color: #ff003c;
+  --steg-x-color: #FFD700;
+  --falcon-defender-color: #15b24b;
+  --z-shark-color: #1be7ff;
+  --bg-dark: #0d0d0d;
+  --text-main: #fff;
+  --border-color: #393939;
+}
+
+/* 2. تنسيق الأيقونة (حل مشكلة الظهور في الديسكتوب) */
+.navContainer .MenuIcon {
+  display: none !important; /* إخفاء إجباري في الشاشات الكبيرة */
+  cursor: pointer;
+  color: #fff;
+  font-size: 32px;
+  z-index: 1002;
+}
+
+/* 3. حاوية الناف بار الأساسية */
+.navContainer {
+  width: auto;
+  height: 60px;
+  margin: 25px 25px;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 30px;
+  position: relative; 
+  background-color: rgba(13, 13, 13, 0.95);
+  position: fixed;        /* تثبيت العنصر */
+  top: 0;                 /* مكانه في الأعلى */
+  left: 0;                /* محاذاة لليسار */
+  right: 0;               /* محاذاة لليمين */
+  z-index: 9999;          /* لضمان ظهوره فوق كل العناصر */
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.navContainer.nav-hidden {
+  /* نقوم برفع الناف بار للأعلى بمقدار ارتفاعه + المارجن 
+    بما أن الارتفاع 60 والمارجن العلوي 25، نحتاج رفعه أكثر من 100%
+  */
+  transform: translateY(-200%); 
+}
+
+/* 4. الروابط في نسخة الديسكتوب */
+.navBarLinks {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  height: 100%;
+}
+
+.navBarLinks ul {
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  list-style: none;
+}
+
+.navBarLinks li {
+  height: 100%;
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  border-top: 3px solid transparent;
+  font-weight: 300;
+  cursor: pointer;
+  color: var(--text-main);
+}
+/* تأثير الـ Hover في الديسكتوب (الخط العلوي) */
+.navBarLinks li:hover {
+  border-top: 3px solid var(--active-color, var(--spy-eye-color));
+  box-shadow: inset 0 10px 20px -12px var(--active-color, var(--spy-eye-color));
+  font-weight: 600;
+}
+
+/* 5. لوجو الموقع وأزرار الجوانب */
+.websiteLogo {
+  display: flex;
+  width: 315px;
+  align-items: center;
+}
+#DeltaSec-Icon{
+  width: 30px;
+  fill: #fff;
+  cursor: pointer;
+}
+
+.contactButton {
+  width: 315px;
+  text-align: right;
+}
+
+/* 6. قائمة الأدوات المنسدلة (Dropdown) */
+.tools-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.tools-wrapper .dropdown-container {
+  position: absolute;
+  top: 65px;
+  left: -150px;
+  transform:  translateY(10px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* تأثير زجاجي سيبراني */
+}
+
+.docs-wrapper .dropdown-container {
+  position: absolute;
+  top: 65px;
+  left: 500px;
+  transform:  translateY(10px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  backdrop-filter: blur(10px); /* تأثير زجاجي سيبراني */
+}
+
+.tools-wrapper:hover .dropdown-container {
+  visibility: visible;
+  opacity: 1;
+  transform:  translateY(0px);
+}
+
+.docs-wrapper:hover .dropdown-container{
+  visibility: visible;
+  opacity: 1;
+  transform:  translateY(0px);
+}
+
+/* ------------------------------------------------ */
+/* 7. تصميم الموبايل (Responsive Design) */
+/* ------------------------------------------------ */
+
+@media (max-width: 768px) {
+  .navContainer {
+    margin: 10px;
+    padding: 0 15px;
+    justify-content: space-between;
+    background-color: rgba(13, 13, 13, 0.95);
+  }
+
+  /* إظهار أيقونة المنيو */
+  .navContainer .MenuIcon {
+    display: block !important;
+
+  }
+
+  /* القائمة العمودية في الموبايل */
+  .navBarLinks {
+    position: absolute;
+    top: 70px;
+    left: -1px;
+    width: 100%;
+    height: auto;              /* مهم */
+    overflow: hidden;
+    flex-direction: column;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    border-radius: 5px;
+    height: fit-content;
+    /* background-color: var(--bg-dark); */
+    /* خواص النعومة والاختفاء */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* الحالة النشطة عند فتح المنيو */
+  .navBarLinks.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    backdrop-filter: blur(10px); /* تأثير زجاجي سيبراني */
+    background-color: rgba(13, 13, 13, 0.6);
+  }
+
+  .navBarLinks ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    height: auto;
+  }
+
+  /* إصلاح الـ li والـ Hover في الموبايل */
+  .navBarLinks li {
+    width: 100%;
+    height: 60px;
+    border-top: none !important; /* إلغاء الخط العلوي */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* فاصل ناعم */
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* تأثير Hover جديد متناسق مع الموبايل */
+  .navBarLinks li:hover {
+    background: linear-gradient(90deg, transparent,color-mix(in srgb, var(--active-color, var(--spy-eye-color)), transparent 90%), transparent);
+    color: var(--active-color, var(--spy-eye-color));
+    box-shadow: none; /* إزالة الظل القديم */
+    border-bottom: 2px solid var(--active-color, var(--spy-eye-color)); /* خط جانبي بدلاً من العلوي */
+    font-size: 19px;
+  }
+
+  /* إصلاح قائمة الـ Tools في الموبايل لكي لا تطير فوق الروابط */
+  .dropdown-container {
+    position: static !important;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.4s ease;
+    width: 100%;
+    pointer-events: auto; /* مهم */
+
+  }
+
+  .dropdown-container.is-open {
+    max-height: 1200px; /* أكبر من أعلى محتوى */
+    pointer-events: auto; /* مهم */
+  }
+
+  .tools-wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+
+  /* إخفاء العناصر الزائدة في الموبايل */
+  .contactButton {
+    display: none;
+  }
+  
+  .websiteLogo {
+    width: auto;
+  }
+}
