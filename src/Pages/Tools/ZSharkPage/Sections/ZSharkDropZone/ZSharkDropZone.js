@@ -36,6 +36,7 @@ export default function ZSharkDropZone() {
       });
 
       const result = await response.json();
+      console.log(result)
 
       if (result.status === "success") {
         // تمرير البيانات الموجودة داخل مفتاح data في رد السيرفر
@@ -45,6 +46,7 @@ export default function ZSharkDropZone() {
       }
     } catch (err) {
       setError("API Connection error. Ensure the backend is running.");
+      console.log(err)
     } finally {
       setIsLoading(false);
     }
