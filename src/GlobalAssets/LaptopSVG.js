@@ -1,6 +1,7 @@
-export default function LaptopSVG() {
+export default function LaptopSVG({className}) {
   return (
     <svg
+      className={className}
       width="749"
       height="454"
       viewBox="0 0 749 454"

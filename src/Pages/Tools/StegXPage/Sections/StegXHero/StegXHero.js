@@ -19,10 +19,10 @@ export default function StegXHero() {
         <h1>Integrating Non-Linear LSB & Military-Grade Encryption.</h1>
       </div>
       <div className="steg-x-CTA-buttons">
-        <button className="steg-x-CTA-button" id="generate-image">
+        <a href="#stegx-drop-zone"><button className="steg-x-CTA-button" id="generate-image">
           <SteganographyIcon widthSize="20px" />
           <p style={{ margin: "0" }}>Generate a Stego Image</p>
-        </button>
+        </button></a>
         <button className="steg-x-CTA-button" id="view-docs">
           <ArrowOutwardIcon /> View Documentation
         </button>

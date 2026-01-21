@@ -56,6 +56,7 @@ export default function ZSharkDropZone() {
     onDrop,
     accept: { "application/vnd.tcpdump.pcap": [".pcap", ".cap", ".pcapng"] },
     multiple: false,
+    disabled: isLoading
   });
 
   if (analysisData) {
@@ -77,7 +78,7 @@ export default function ZSharkDropZone() {
 
   return (
     <div className="upload-container">
-      <h1 className="zshark-glitch-title" data-text="START ANALYZING">
+      <h1 className="zshark-glitch-title" data-text="START ANALYZING" id="zshark-upload-section" >
         START ANALYZING
       </h1>
       
@@ -87,7 +88,7 @@ export default function ZSharkDropZone() {
         </Alert>
       )}
 
-      <div className={`dropzone ${isDragActive ? "active" : ""}`} {...getRootProps()}>
+      <div className={`dropzone ${isDragActive ? "active" : ""} ${isLoading ? "disabled-zone" : ""}`} {...getRootProps()}>
         <input {...getInputProps()} />
         <div className="zshark-upload-icon">
           <CloudUploadIcon sx={{ fontSize: "4rem" }} />

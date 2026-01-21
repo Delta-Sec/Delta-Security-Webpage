@@ -1,0 +1,99 @@
+/* FalconDownload.css */
+.falcon-download-section {
+  background-color: #000;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.download-main-title {
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700 !important;
+  margin-bottom: 50px !important;
+  font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+}
+
+.download-card {
+  background: linear-gradient(180deg, rgba(0, 255, 132, 0.04) 0%, rgba(0, 0, 0, 0) 100%);
+  border: 1px solid rgba(0, 255, 132, 0.15);
+  border-radius: 20px;
+  padding: 35px 20px; /* تقليل التباعد الداخلي */
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  max-width: 340px; /* تحديد أقصى عرض للصندوق */
+  margin: 0 auto; /* توسيط الصناديق في الـ Grid */
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.download-card:hover {
+  border-color: #00ff84;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 255, 132, 0.08);
+}
+
+.watermark-box {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  z-index: 0;
+  opacity: 0.6;
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.os-label { color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+.os-name { 
+  color: #fff; 
+  font-family: 'Inter', sans-serif; 
+  font-weight: 600 !important; 
+  margin-bottom: 25px !important;
+  font-size: 1.8rem !important;
+}
+
+.steps-list {
+  text-align: left;
+  margin-bottom: 30px;
+  min-height: 140px; /* تقليل الطول الأدنى لقائمة الخطوات */
+}
+
+.step-item {
+  color: #999;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 10px !important;
+  font-size: 0.95rem !important;
+  line-height: 1.3 !important;
+}
+
+.card-download-btn {
+  background-color: rgba(0, 255, 132, 0.08) !important;
+  border: 1px solid #00ff84 !important;
+  color: #fff !important;
+  border-radius: 40px !important;
+  padding: 10px 30px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  width: 90%;
+}
+
+.card-download-btn:hover { 
+  background-color: #00ff84 !important; 
+  color: #000 !important; 
+}
+
+.version-info { color: #333; font-size: 0.7rem; margin-top: 10px !important; }
+
+.card-footer { margin-top: 35px; }
+.card-footer p { color: #444; font-size: 0.75rem; margin-bottom: 4px !important; }
+.click-here { 
+  color: #00ff84 !important; 
+  text-decoration: none !important;
+}

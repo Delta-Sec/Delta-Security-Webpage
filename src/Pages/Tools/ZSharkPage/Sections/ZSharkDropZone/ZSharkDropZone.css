@@ -10,7 +10,7 @@
 .zshark-glitch-title {
   position: relative;
   font-family: "Orbitron", sans-serif;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: #fff;
   letter-spacing: 5px;
@@ -192,3 +192,17 @@
 .zshark-error-alert svg {
   color: #ff5252;
 }
+
+
+.dropzone.disabled-zone {
+  cursor: not-allowed; /* تغيير شكل الماوس */
+  opacity: 0.6;        /* تقليل الشفافية لإيحاء التعطيل */
+  background: #0a0d12;
+  border-color: rgba(27, 231, 255, 0.1);
+}
+
+.dropzone.disabled-zone:hover {
+  border-color: rgba(27, 231, 255, 0.1); /* منع تغيير اللون عند الـ Hover */
+}
+
+

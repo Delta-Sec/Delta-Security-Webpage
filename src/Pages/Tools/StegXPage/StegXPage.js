@@ -12,12 +12,30 @@ import StegXSteps from "./Sections/StegXSteps/StegXSteps";
 import StegXDropZone from "./Sections/StegXDropZone/StegXDropZone";
 import Footer from "../../../SharedComponents/Footer/Footer";
 import YellowBackground from "../../../GlobalAssets/YellowBackground";
+import ImageIcon from "@mui/icons-material/Image";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import LockIcon from "@mui/icons-material/Lock";
+import CompareIcon from "@mui/icons-material/Compare";
+import DocsDropDownList from "../../../SharedComponents/DocsDropDownList/DocsDropDownList";
+
+
+const stegXDocs = {
+  title: "StegX Documentation",
+  toolColor: "#ffd700",
+  hoverBg: "rgba(138, 43, 226, 0.05)",
+  items: [
+    { icon: ImageIcon, title: "Image Prep", desc: "Supported formats (PNG/JPG)" },
+    { icon: LockIcon, title: "Encryption", desc: "AES-256 hiding logic" },
+    { icon: VisibilityIcon, title: "Detection", desc: "Scanning for hidden data" },
+    { icon: CompareIcon, title: "Analysis", desc: "Bit-level comparison" }
+  ]
+};
 
 export default function StegXPage() {
   return (
     <YellowBackground>
     <div style={{display:"flex", flexDirection:"column", gap:"40px"}}>
-      <NavBar ThemeColor="var(--steg-x-color)">
+      <NavBar ThemeColor="var(--steg-x-color)"  DocsCards={<DocsDropDownList {...stegXDocs} />}>
         <div
           style={{
             display: "flex",

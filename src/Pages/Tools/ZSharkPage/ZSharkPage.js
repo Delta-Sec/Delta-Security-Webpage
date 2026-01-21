@@ -9,13 +9,28 @@ import Footer from "../../../SharedComponents/Footer/Footer";
 import ZSharkHero from "./Sections/ZSharkHero/ZSharkHero";
 import ZSharkDropZone from "./Sections/ZSharkDropZone/ZSharkDropZone";
 import ZSharkFeatures from "./Sections/ZSharkFeatures/ZSharkFeatures";
+import DocsDropDownList from "../../../SharedComponents/DocsDropDownList/DocsDropDownList";
+import RouterIcon from "@mui/icons-material/Router";
+import FilterAltIcon from "@mui/icons-material/Filter";
+import AssessmentIcon from "@mui/icons-material/Assessment";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
 
-
+const zSharkDocs = {
+  title: "Z Shark Documentation",
+  toolColor: "#00d4ff",
+  hoverBg: "rgba(0, 212, 255, 0.05)",
+  items: [
+    { icon: RouterIcon, title: "Traffic Capture", desc: "Live packet monitoring" },
+    { icon: FilterAltIcon, title: "Filtering", desc: "Protocol-specific filters" },
+    { icon: AssessmentIcon, title: "Statistics", desc: "Network usage reports" },
+    { icon: UploadFileIcon, title: "PCAP Analysis", desc: "Importing capture files" }
+  ]
+};
 
 export default function ZSharkPage() {
   return (
     <div>
-      <NavBar ThemeColor="var(--z-shark-color)">
+      <NavBar ThemeColor="var(--z-shark-color)"  DocsCards={<DocsDropDownList {...zSharkDocs} />}>
         <div
           style={{
             display: "flex",

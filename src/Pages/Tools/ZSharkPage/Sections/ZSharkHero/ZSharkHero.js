@@ -17,9 +17,9 @@ export default function ZSharkHero() {
           transparency
         </p>
         <div className="CTA-zshark">
-          <button className="zshark-start-CTA">
+          <a href="#zshark-upload-section"><button className="zshark-start-CTA">
             <AutoGraphIcon /> Start Analysis
-          </button>
+          </button></a>
           <button className="zshark-docs-btn">
             <ArrowOutwardIcon /> See Documentation
           </button>

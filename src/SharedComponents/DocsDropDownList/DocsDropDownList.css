@@ -1,0 +1,58 @@
+.docs-container {
+  background-color: rgba(13, 13, 13, 0.8);
+  width: 350px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 15px;
+}
+
+.docs-header {
+  font-family: "Orbitron", sans-serif;
+  color: var(--accent-color); /* يعتمد على الأداة */
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.docs-sub-cards {
+  background-color: rgba(255, 255, 255, 0.03);
+  width: 100%;
+  height: 65px; 
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.shared-item:hover {
+  background-color: var(--hover-bg); /* يعتمد على الأداة */
+  border: 1px solid var(--accent-color);
+  transform: translateX(5px);
+}
+
+.docs-icon {
+  font-size: 30px !important;
+}
+
+.docs-title {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  font-size: 16px;
+}
+
+.docs-desc {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  color: #aaa;
+  margin: 0;
+  font-size: 13px;
+}

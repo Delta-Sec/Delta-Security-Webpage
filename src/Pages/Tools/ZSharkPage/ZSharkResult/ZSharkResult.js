@@ -10,14 +10,14 @@ import {
   ResponsiveContainer,
   ReferenceLine,
   Label,
-  Brush, // أضف هذين الاثنين
+  Brush,
 } from "recharts";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import SsidChartIcon from "@mui/icons-material/SsidChart"; // للرسم البياني
-import AssessmentIcon from "@mui/icons-material/Assessment"; // للإحصائيات
-import GppBadIcon from "@mui/icons-material/GppBad"; // للتهديدات
+import SsidChartIcon from "@mui/icons-material/SsidChart"; 
+import AssessmentIcon from "@mui/icons-material/Assessment"; 
+import GppBadIcon from "@mui/icons-material/GppBad"; 
 export default function ZSharkResult({ data }) {
   const [activeTab, setActiveTab] = useState("chart");
 
@@ -27,7 +27,7 @@ export default function ZSharkResult({ data }) {
     setActiveTab(newValue);
   };
 
-  // بيانات من ملف الجيسون المرفوع
+
   const timeStart = new Date(analysisData.start_time);
   const timeEnd = new Date(analysisData.end_time);
   const diffInMs = timeEnd - timeStart;
@@ -41,7 +41,7 @@ export default function ZSharkResult({ data }) {
 
   const threatsCount = analysisData.detections
     ? analysisData.detections.length
-    : 0; //
+    : 0; 
 
   const formatSize = (bytes) => {
     if (bytes >= 1048576) return (bytes / 1048576).toFixed(2) + " MB";
@@ -50,7 +50,7 @@ export default function ZSharkResult({ data }) {
   };
 
   const chartData = analysisData.window_stats.map((win) => ({
-    // نستخدم '2-digit' للثواني لأن النوافذ الزمنية متقاربة جداً
+
     time: new Date(win.start_time).toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
@@ -62,7 +62,7 @@ export default function ZSharkResult({ data }) {
   const threatsExist = threatsCount > 0;
 
   const tabStyle = {
-    color: "#8b949e", // اللون الرمادي الافتراضي
+    color: "#8b949e", 
     fontSize: "0.9rem",
     fontWeight: "bold",
     textTransform: "none",
@@ -70,7 +70,6 @@ export default function ZSharkResult({ data }) {
     borderRadius: "8px",
     margin: "0 5px",
     transition: "0.3s",
-    // التنسيق عند اختيار التبويب
     "&.Mui-selected": {
       color: "#1BE7FF",
       backgroundColor: "rgba(27, 231, 255, 0.05)",
@@ -83,9 +82,9 @@ export default function ZSharkResult({ data }) {
 
   const threatTabStyle = {
     ...tabStyle,
-    color: threatsExist ? "#ff4d4d" : "#8b949e", // أحمر إذا وجد تهديدات، رمادي إذا لم توجد
+    color: threatsExist ? "#ff4d4d" : "#8b949e",
     "&.Mui-selected": {
-      color: threatsExist ? "#ff4d4d" : "#1BE7FF", // أحمر عند التحديد لو وجد تهديدات، أزرق لو لم يوجد
+      color: threatsExist ? "#ff4d4d" : "#1BE7FF", 
       backgroundColor: threatsExist
         ? "rgba(255, 77, 77, 0.05)"
         : "rgba(27, 231, 255, 0.05)",
@@ -97,10 +96,9 @@ export default function ZSharkResult({ data }) {
 
   return (
     <div className="zshark-dashboard-container">
-      {/* هيدر معلومات البيكاب */}
       <div className="zshark-result-header">
         <div className="pcap-main-info">
-          <h2>ANALYSIS RESULT</h2>
+          <h2 style={{margin:"0"}}>ANALYSIS RESULT</h2>
           <h1 className="pcap-path-text">{data.pcap_path.split("/").pop()}</h1>
         </div>
 
@@ -150,12 +148,12 @@ export default function ZSharkResult({ data }) {
         </div>
       </div>
 
-      {/* التبويبات - معدلة لتكون Scrollable على الهاتف */}
+
       <Box className="tabs-navigation-wrapper">
         <Tabs
           value={activeTab}
           onChange={handleChange}
-          variant="fullWidth" // يجعل التبويبات تتوزع بالتساوي وتملأ العرض
+          variant="fullWidth"
           sx={{
             "& .MuiTabs-indicator": {
               backgroundColor:
@@ -166,7 +164,7 @@ export default function ZSharkResult({ data }) {
           <Tab
             value="chart"
             icon={<SsidChartIcon />}
-            iconPosition="top" // الأيقونة فوق النص لتوفير العرض
+            iconPosition="top"
             label={<span className="tab-text">Flow</span>}
             sx={tabStyle}
           />
@@ -199,7 +197,6 @@ export default function ZSharkResult({ data }) {
           <div className="content-card chart-card">
             <h3 className="tab-inner-title">Packet Intensity Over Time</h3>
             <div className="chart-container">
-              {/* تأكد من وجود كلاس بارتفاع محدد */}
               <ResponsiveContainer width="100%" height={350}>
                 <AreaChart
                   data={chartData}
@@ -227,8 +224,8 @@ export default function ZSharkResult({ data }) {
                     stroke="#5a636e"
                     fontSize={10}
                     tickLine={false}
-                    interval="preserveStartEnd" // لضمان عدم تداخل النصوص
-                    minTickGap={30} // يمنع زحمة النصوص في المحور الأفقي
+                    interval="preserveStartEnd"
+                    minTickGap={30} 
                   />
                   <YAxis
                     stroke="#5a636e"
@@ -246,9 +243,9 @@ export default function ZSharkResult({ data }) {
                   />
 
                   <ReferenceLine
-                    y={80} // القيمة التي يظهر عندها الخط (Threshold)
-                    stroke="#ff4d4d" // لون أحمر للتحذير
-                    strokeDasharray="5 5" // خط مقطع
+                    y={80} 
+                    stroke="#ff4d4d" 
+                    strokeDasharray="5 5" 
                     strokeWidth={2}
                   >
                     <Label
@@ -264,14 +261,14 @@ export default function ZSharkResult({ data }) {
                     dataKey="time"
                     height={20}
                     stroke="#1BE7FF"
-                    fill="#0d1117" // لون خلفية الشريط (نفس لون الكارت)
+                    fill="#0d1117" 
                     travellerWidth={10}
                     gap={5}
                     startIndex={0}
                     endIndex={chartData.length - 1}
                   />
                   <Area
-                    type="monotone" // يجعل الخط انسيابياً
+                    type="monotone" 
                     dataKey="packets"
                     stroke="#1BE7FF"
                     strokeWidth={3}
@@ -310,7 +307,6 @@ export default function ZSharkResult({ data }) {
         {activeTab === "threats" && (
           <div className="threats-vertical-container">
             {analysisData.detections.length > 0 ? (
-              // التعديل هنا: ترتيب المصفوفة حسب الخطورة تنازلياً قبل العرض
               [...analysisData.detections]
                 .sort((a, b) => b.severity - a.severity)
                 .map((det, i) => {

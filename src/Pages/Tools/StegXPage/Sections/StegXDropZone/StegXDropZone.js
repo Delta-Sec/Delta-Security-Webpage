@@ -237,7 +237,7 @@ export default function StegXDropZone() {
 
   return (
     <div className="stegx-encoder-container">
-      <h1 className="section-main-title">
+      <h1 className="section-main-title" id="stegx-drop-zone">
         Try Our{" "}
         <span
           style={{

@@ -1,0 +1,89 @@
+/* SystemRequirements.css */
+.falcon-req-section {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent; /* ليتناسب مع خلفية الصفحة الرئيسية */
+}
+
+.falcon-req-title {
+    color: #fff;
+    font-family: 'Orbitron', sans-serif; /* أو أي خط تقني مستخدم في المشروع */
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.falcon-req-card {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(0, 255, 132, 0.2);
+    border-radius: 15px;
+    padding: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 255, 132, 0.05);
+    overflow: hidden;
+}
+
+.falcon-req-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+}
+
+.falcon-req-table thead {
+    background: rgba(0, 255, 132, 0.05);
+}
+
+.falcon-req-table th {
+    text-align: left;
+    padding: 20px;
+    color: #00ff84;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0, 255, 132, 0.2);
+}
+
+.falcon-req-table td {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1rem;
+}
+
+.falcon-req-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* تمييز الخلايا */
+.falcon-category-cell {
+    font-weight: 600;
+    color: #fff;
+}
+
+.falcon-notes-cell {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* تأثير عند تمرير الماوس */
+.falcon-req-table tr:hover {
+    background: rgba(0, 255, 132, 0.03);
+    transition: background 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .falcon-req-title {
+        font-size: 1.8rem;
+    }
+    
+    .falcon-req-table th, .falcon-req-table td {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+}

@@ -33,6 +33,12 @@
   align-items: center;
 }
 
+@media(max-width:768px){
+.zshark-hero-preview svg{
+  width: 50%;
+}
+}
+
 #zshark-svg-logo {
   animation: glow-logo 6s ease-in-out infinite;
 }

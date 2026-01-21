@@ -106,15 +106,13 @@ export default function NavBar({ ThemeColor, children, DocsCards }) {
               <div className="dropdown-inner">{DocsCards}</div>
             </div>
           </div>
-
-          <Link to={"/faq"}><li onClick={closeAll}>FAQ</li></Link>
           
           <Link to={"/about"}><li onClick={closeAll}>About Us</li></Link>
         </ul>
       </div>
 
       <div className="contactButton">
-        <ContactButton ThemeColor={ThemeColor} />
+        <a href="mailto:noreply@delta-sec.site"><ContactButton ThemeColor={ThemeColor} /></a>
       </div>
 
       <MenuSharpIcon

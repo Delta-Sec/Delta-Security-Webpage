@@ -196,30 +196,7 @@ export default function AboutUs() {
       </div>
 
       <div className="relative z-10">
-        <NavBar ThemeColor="var(--z-shark-color)">
-          <div
-            style={{
-              display: "flex",
-              gap: "15px",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 15px",
-            }}
-          >
-            <div style={{ cursor: "pointer", display: "flex" }}></div>
-            <p
-              style={{
-                margin: "0px",
-                fontFamily: "orbitron",
-                fontSize: "20px",
-                fontWeight: "600",
-                width: "150px",
-                textAlign: "left",
-              }}
-            >
-              Z SHARK
-            </p>
-          </div>
+        <NavBar ThemeColor="var(--delta-sec-logo) ">
         </NavBar>
         {/* Hero Section */}
         <section className="container about-hero-section">
