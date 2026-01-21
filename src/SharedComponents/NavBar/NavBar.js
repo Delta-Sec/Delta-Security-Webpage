@@ -90,8 +90,9 @@ export default function NavBar({ ThemeColor, children, DocsCards }) {
           </div>
 
           {/* قائمة الـ Docs الجديدة */}
+          
           <div className="docs-wrapper dropdown-wrapper">
-            <li className="docs-trigger" onClick={toggleDocs}>
+            <a href="https://deltawiki-ei7xm47a.manus.space/"><li className="docs-trigger" onClick={toggleDocs}>
               <ExpandMoreIcon
                 className={`arrow-icon ${isDocsOpen ? "rotate" : ""}`}
               />
@@ -104,7 +105,7 @@ export default function NavBar({ ThemeColor, children, DocsCards }) {
               dropdown-container ${isDocsOpen ? "is-open" : ""}`}
             >
               <div className="dropdown-inner">{DocsCards}</div>
-            </div>
+            </div></a>
           </div>
           
           <Link to={"/about"}><li onClick={closeAll}>About Us</li></Link>
